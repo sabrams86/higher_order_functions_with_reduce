@@ -10,7 +10,7 @@ module.exports = {
     return array.reduce(function (prev, curr) {
       if (cb(curr)){
         return prev.concat(curr)
-      } else {
+      } else {	
         return prev;
       }
     },[]);
