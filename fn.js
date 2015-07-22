@@ -10,7 +10,7 @@ module.exports = {
     return array.reduce(function (prev, curr) {
       if (cb(curr)){
         return prev.concat(curr)
-      } else {	
+      } else {
         return prev;
       }
     },[]);
@@ -18,31 +18,19 @@ module.exports = {
 
   every: function (array, cb) {
     return array.reduce(function (prev, curr) {
-      if (cb(curr) && prev === true) {
-        return true;
-      } else {
-        return false;
-      }
+      return cb(curr) && prev
     }, true);
   },
 
   some: function (array, cb) {
     return array.reduce(function (prev, curr) {
-      if (cb(curr) || prev === true) {
-        return true;
-      } else {
-        return false;
-      }
+      return cb(curr) || prev
     }, false);
   },
 
   none: function (array, cb) {
     return array.reduce(function (prev, curr) {
-      if (!cb(curr) && prev === true) {
-        return true;
-      } else {
-        return false;
-      }
+      return !cb(curr) && prev
     }, true);
   },
 }
